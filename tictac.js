@@ -28,7 +28,7 @@ buttons.forEach((box) =>{
             // win()
         }
         box.disabled=true
-        
+        win()
     })
 })
 
@@ -42,8 +42,14 @@ function win(){
         let entry3=buttons[pattern[2]].innerText
         if((entry1=="X" && entry2=="X" && entry3=="X") || (entry1=="O" && entry2=="O" && entry3=="O")){
             console.log("Game Over")
-            return true
+            escape_seq()
         }
-        return false
+        
+    }
+}
+
+function escape_seq(){
+    for(let button of buttons){
+        button.disabled=true
     }
 }
