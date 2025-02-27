@@ -1,5 +1,7 @@
 let buttons=document.querySelectorAll(".box")
 let reset=document.querySelectorAll("#reset")
+let winner=document.querySelector(".winner")
+// console.log(winner)
 
 let win_patterns=[
     [0,1,2],
@@ -34,9 +36,7 @@ buttons.forEach((box) =>{
 
 
 function win(){
-    console.log("inside win");
     for(let pattern of win_patterns){
-        // console.log(buttons[pattern[0]], buttons[pattern[1]], buttons[pattern[2]])
         let entry1=buttons[pattern[0]].innerText
         let entry2=buttons[pattern[1]].innerText
         let entry3=buttons[pattern[2]].innerText
@@ -57,7 +57,11 @@ function escape_seq(){
 function displayWinner(){
     if(turnPlayer1){
         console.log("O wins")
+        winner.innerText="O wins"
+        winner.classList.remove("hide")
     }else{
         console.log("X wins")
+        winner.innerText="X wins"
+        winner.classList.remove("hide")
     }
 }
