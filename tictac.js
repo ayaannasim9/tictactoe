@@ -42,8 +42,14 @@ function win(){
         if((entry1=="X" && entry2=="X" && entry3=="X") || (entry1=="O" && entry2=="O" && entry3=="O")){
             displayWinner()
             escape_seq()
-        }
-        
+            return
+        }   
+    }
+    let allFilled = [...buttons].every(button => button.innerText !== "");
+    if (allFilled) {
+        winner.innerText = "It's a Draw!";
+        winner.classList.remove("hide");
+        escape_seq(); // Disable all buttons
     }
 }
 
