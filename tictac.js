@@ -1,5 +1,5 @@
 let buttons=document.querySelectorAll(".box")
-let reset=document.querySelectorAll("#reset")
+let reset=document.querySelector("#reset")
 let winner=document.querySelector(".winner")
 // console.log(winner)
 
@@ -19,7 +19,6 @@ let win_patterns=[
 let turnPlayer1=true
 buttons.forEach((box) =>{
     box.addEventListener("click", () =>{
-        console.log("box was clicked");
         if(turnPlayer1){
             box.innerText="X"
             turnPlayer1=false
@@ -56,12 +55,15 @@ function escape_seq(){
 
 function displayWinner(){
     if(turnPlayer1){
-        console.log("O wins")
         winner.innerText="O wins"
         winner.classList.remove("hide")
     }else{
-        console.log("X wins")
         winner.innerText="X wins"
         winner.classList.remove("hide")
     }
 }
+
+reset.addEventListener("click",() =>{
+    console.log("reset");
+    location.reload()
+})
