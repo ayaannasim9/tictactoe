@@ -54,3 +54,12 @@ body{
     color: #fff;
     border: none;
 }
+.winner{
+    color: #fff;
+    font-size: 10vmin;
+
+}
+
+.hide{
+    display: none;
+}
