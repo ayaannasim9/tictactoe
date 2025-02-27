@@ -41,7 +41,7 @@ function win(){
         let entry2=buttons[pattern[1]].innerText
         let entry3=buttons[pattern[2]].innerText
         if((entry1=="X" && entry2=="X" && entry3=="X") || (entry1=="O" && entry2=="O" && entry3=="O")){
-            console.log("Game Over")
+            displayWinner()
             escape_seq()
         }
         
@@ -51,5 +51,13 @@ function win(){
 function escape_seq(){
     for(let button of buttons){
         button.disabled=true
+    }
+}
+
+function displayWinner(){
+    if(turnPlayer1){
+        console.log("O wins")
+    }else{
+        console.log("X wins")
     }
 }
